@@ -15,4 +15,4 @@ TEAM MEMBERS:
 2. PRASHIK HUMANE prashik24 prashikhumane744@gmail.com LCB2023039
    
 
-3. ARUN KUMAR SWAMI arunkumar-49 LCB2023049
+3. ARUN KUMAR SWAMI arunkumar-49 swamiarunkumar1@gmail.com LCB2023049
