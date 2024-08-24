@@ -12,5 +12,7 @@ TEAM IDEA:
 TEAM MEMBERS:
 1.ESHANT GUPTA eshant742 eshantgupta006@gmail.com LCB2023016
 
-2. PRASHIK HUMANE prashik24
-   prashikhumane744@gmail.com LCB2023039
+2. PRASHIK HUMANE prashik24 prashikhumane744@gmail.com LCB2023039
+   
+
+3. ARUN KUMAR SWAMI arunkumar-49 LCB2023049
