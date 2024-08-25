@@ -19,4 +19,5 @@ TEAM MEMBERS:
 
 4. PRATEEK MISHRA Prateek-byte prateekmishrachs@gmail.com LCB2023031
 
-5. ADITYA SINGH CHANDEL LCI2023046
+5. ADITYA SINGH CHANDEL Aditya-Singh-Chandel
+   adityasinghchandel269@gmail.com LCI2023046
