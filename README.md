@@ -21,3 +21,5 @@ TEAM MEMBERS:
 
 5. ADITYA SINGH CHANDEL Aditya-Singh-Chandel
    adityasinghchandel269@gmail.com LCI2023046
+
+6. Ankur Nanera ankurnanera naneraankur69@gmail.com LCB2023052
