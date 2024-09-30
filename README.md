@@ -10,16 +10,47 @@ TEAM IDEA:
 IN-DRIVE Clone
 
 TEAM MEMBERS: 
-
-1. ESHANT GUPTA eshant742 eshantgupta005@gmail.com LCB2023016
-
-2. PRASHIK HUMANE prashik24 prashikhumane744@gmail.com LCB2023039 
-
-3. ARUN KUMAR SWAMI arunkumar-49 swamiarunkumar1@gmail.com LCB2023049
-
-4. PRATEEK MISHRA Prateek-byte prateekmishrachs@gmail.com LCB2023031
-
-5. ADITYA SINGH CHANDEL Aditya-Singh-Chandel
-   adityasinghchandel269@gmail.com LCI2023046
-
-6. Ankur Nanera ankurnanera naneraankur69@gmail.com LCB2023052
+<table>
+  <tr>
+    <th>Team Member</th>
+    <th>GitHub Username</th>
+    <th>Email</th>
+    <th>Roll No.</th>
+  </tr>
+  <tr>
+    <td>Eshant Gupta</td>
+    <td>eshant742</td>
+    <td>eshantgupta005@gmail.com</td>
+    <td>LCB2023016</td>
+  </tr>
+  <tr>
+    <td>Prashik Humane</td>
+    <td>prashik24</td>
+    <td>prashikhumane744@gmail.com</td>
+    <td>LCB2023039</td>
+  </tr>
+  <tr>
+    <td>Arun Kumar Swami</td>
+    <td>arunkumar-49</td>
+    <td>swamiarunkumar1@gmail.com</td>
+    <td>LCB2023049</td>
+  </tr>
+  <tr>
+    <td>Prateek Mishra</td>
+    <td>Prateek-byte</td>
+    <td>prateekmishrachs@gmail.com</td>
+    <td>LCB2023031</td>
+  </tr>
+  <tr>
+    <td>Aditya Singh Chandel</td>
+    <td>Aditya-Singh-Chandel</td>
+    <td>adityasinghchandel269@gmail.com</td>
+    <td>LCI2023046</td>
+  </tr>
+  <tr>
+    <td>Ankur Nanera</td>
+    <td>ankurnanera</td>
+    <td>naneraankur69@gmail.com</td>
+    <td>LCB2023052</td>
+  </tr>
+</table>
