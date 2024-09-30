@@ -1,9 +1,9 @@
 # CSAICSABTeam006
 
-## <br>TEAM NAME:</br> BYTE BRIGADE 
+## <b>TEAM NAME:</b> BYTE BRIGADE 
 
 
-## <br>TEAM IDEA:</br> IN-DRIVE Clone
+## <b>TEAM IDEA:</b> IN-DRIVE Clone
 
 ### TEAM MEMBERS: 
 
