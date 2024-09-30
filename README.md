@@ -1,15 +1,13 @@
 # CSAICSABTeam006
-CSAICSABTeam006
+
+## TEAM NAME: BYTE BRIGADE 
 
 
-TEAM NAME: BYTE BRIGADE 
+## TEAM IDEA: IN-DRIVE Clone
+
+### TEAM MEMBERS: 
 
 
-TEAM IDEA:
-
-IN-DRIVE Clone
-
-TEAM MEMBERS: 
 <table>
   <tr>
     <th>Team Member</th>
