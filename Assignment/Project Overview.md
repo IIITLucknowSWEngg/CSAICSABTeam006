@@ -3,7 +3,7 @@
 
 Included Features:
 
-***1. User Registration and Authentication:***
+<h2>1. User Registration and Authentication:</h2>
 
 User Sign-Up:
 
@@ -31,7 +31,7 @@ Users can update their profile information (name, profile photo, contact info, e
 
 Manage preferred payment methods and ride preferences (vehicle type, comfort, etc.).
 
-***2. Ride Booking and Management:***
+<h2>2. Ride Booking and Management:</h2>
 
 Ride Request:
 
@@ -53,7 +53,7 @@ Users can choose a driver based on the fare, ratings, and response time.
 
 Real-time driver tracking is available after ride confirmation.
 
-***3. Real-Time GPS and Map Integration:***
+<h2>3. Real-Time GPS and Map Integration:</h2>   
 
 Geolocation Services:
 
@@ -69,7 +69,7 @@ Users can view the driver’s real-time location and ETA.
 
 Live updates on traffic conditions and alternative routes if necessary.
 
-***4. Payments and Transactions:***
+<h2>4. Payments and Transactions:</h2>
 
 Multiple Payment Options:
 
@@ -89,7 +89,7 @@ PCI-DSS compliance for all payment transactions.
 
 Encrypted payment gateways to protect user payment details.
 
-***5. Driver and Vehicle Management:***
+<h2>5. Driver and Vehicle Management:</h2> 
 
 Driver Registration:
 
@@ -109,7 +109,7 @@ Users can rate drivers based on their ride experience.
 
 Ratings affect driver visibility and ride assignment priority.
 
-***6. In-App Chat and Communication:***
+ <h2>6. In-App Chat and Communication:</h2> 
 
 Driver-Passenger Chat:
 
@@ -123,7 +123,7 @@ Push notifications for ride requests, driver arrivals, trip updates, and fare de
 
 Alerts for promotions, discounts, and trip reminders.
 
-***7. Ride History and Reports:***
+<h2>7. Ride History and Reports:</h2> 
 
 Ride History:
 
@@ -137,7 +137,7 @@ Drivers have access to their ride logs, earnings, and performance statistics (nu
 
 Admin panel offers drivers insights into performance, feedback, and earning potential.
 
-***8. Admin and Control Panel:***
+<h2>8. Admin and Control Panel:</h2>
 
 Admin Dashboard:
 
@@ -157,7 +157,7 @@ Advanced analytics on user engagement, driver performance, and ride statistics.
 
 Revenue reports, fare breakdowns, and payment transaction logs for financial oversight.
 
-***9. Security and Privacy:***
+<h2>9. Security and Privacy:</h2>
 
 Ride Safety Features:
 
@@ -171,7 +171,7 @@ End-to-end encryption for chat, location data, and payment transactions.
 
 Compliance with regional privacy laws (GDPR, CCPA) for user data protection.
 
-***10. Offers and Promotions:***
+<h2>10. Offers and Promotions:</h2>
 
 Referral Program:
 
@@ -183,7 +183,7 @@ Support for promo codes that offer ride discounts.
 
 Loyalty program where users earn points for every ride, redeemable for discounts or rewards.
 
-***11. Multi-Device Support:***
+<h2>11. Multi-Device Support:</h2>
 
 Mobile and Web Apps:
 
