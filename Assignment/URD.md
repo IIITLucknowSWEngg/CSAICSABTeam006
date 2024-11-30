@@ -150,11 +150,4 @@ This document defines the functional and non-functional requirements for the InD
 - Availability of payment gateways to support online transactions.
 - The system assumes good internet connectivity for tracking and real-time notifications.
 
----
-
-## 8. Glossary
-
-- **Passenger**: A user requesting rides.
-- **Driver**: A user providing ride services.
-- **Fare Negotiation**: The process by which passengers and drivers agree on a price.
 
