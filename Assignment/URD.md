@@ -150,4 +150,82 @@ This document defines the functional and non-functional requirements for the InD
 - Availability of payment gateways to support online transactions.
 - The system assumes good internet connectivity for tracking and real-time notifications.
 
+---
 
+## 8 Continuous Integration (CI) and Continuous Deployment (CD)
+
+To ensure efficient and high-quality development and deployment of the InDrive clone application, a CI/CD pipeline will be implemented. This section outlines the CI/CD requirements.
+
+---
+
+### 8.1 Continuous Integration (CI)
+
+CI focuses on automating code integration, testing, and validation. Key CI requirements include:
+
+1. *Version Control Integration*
+   - Use a Git-based repository system like GitHub, GitLab, or Bitbucket for source code management.
+   - Enforce branching and merging policies to maintain code stability.
+
+2. *Automated Build*
+   - Configure tools like Jenkins, CircleCI, or GitHub Actions to automatically build the application whenever code is committed or merged into the main branch.
+   - Ensure builds for both Android and iOS platforms are generated.
+
+3. *Automated Testing*
+   - Implement unit tests, integration tests, and UI tests to validate new features or updates.
+   - Use frameworks like Jest, Mocha, or JUnit for backend testing and Appium or Espresso for mobile app testing.
+   - Automatically run tests as part of the CI pipeline.
+
+4. *Code Quality and Security Analysis*
+   - Integrate tools like SonarQube for static code analysis to maintain code quality.
+   - Use security scanners to identify vulnerabilities in code dependencies.
+
+5. *Notification and Feedback*
+   - Notify the development team via Slack, email, or other channels about build and test results.
+
+---
+
+### 8.2 Continuous Deployment (CD)
+
+CD automates the release process, ensuring smooth updates to production with minimal downtime. Key CD requirements include:
+
+1. *Staging Environment*
+   - Set up a staging environment to test features in a production-like setting.
+   - Allow manual approval before deploying to production.
+
+2. *Automated Deployment*
+   - Use tools like Jenkins, GitLab CI/CD, or AWS CodePipeline to automate deployment to servers or app stores.
+   - Implement zero-downtime deployment strategies using techniques like blue-green or canary deployment.
+
+3. *Versioning and Rollback*
+   - Maintain a versioning system for each release to track changes.
+   - Enable rollback to the previous stable version in case of deployment issues.
+
+4. *Monitoring and Logging*
+   - Integrate tools like ELK Stack, New Relic, or Datadog for application performance monitoring.
+   - Monitor deployment logs and handle exceptions or errors.
+
+5. *App Store Deployment*
+   - Automate submission of app updates to the Google Play Store and Apple App Store using tools like Fastlane.
+
+---
+
+### 8.3 CI/CD Workflow Summary
+
+1. *Developer Commit*
+   - Developers commit code changes to the repository.
+   - Trigger CI pipeline.
+
+2. *Build and Test*
+   - Automated builds are generated.
+   - Unit, integration, and UI tests are executed.
+
+3. *Code Quality Check*
+   - Static code analysis and security scans are performed.
+
+4. *Deployment to Staging*
+   - If tests pass, the build is deployed to the staging environment.
+   - QA and stakeholder approval.
+
+5. *Production Deployment*
+   - Post-approval, the build is deployed to the production environment or app stores.
+   - Application monitoring ensures smooth operation.
