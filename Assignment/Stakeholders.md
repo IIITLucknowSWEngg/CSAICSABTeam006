@@ -1,8 +1,5 @@
-<h1>Stakeholder Register for InDrive Clone</h1>
+<h2>Stakeholder Register for InDrive Clone :-</h2>
 <br>
-<h2>Introduction</h2>
-This document provides a detailed Stakeholder Register for the InDrive Clone project, listing the various stakeholders involved in its development and operation. Each stakeholder is essential to the platform's success, and understanding their interests, roles, and influence ensures the project meets its objectives. By classifying stakeholders into internal and external groups, we aim to foster communication and collaboration, enabling a seamless experience for users and stakeholders alike.
-<hr></hr>
 <h2>Internal Stakeholders</h2>
 <h2>1. Software Development Team</h2>
 
