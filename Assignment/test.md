@@ -1,12 +1,6 @@
 # Test Results for InDrive  
 
-### Project Name: InDrive  
-### Description: InDrive is a ride-hailing app focusing on fare negotiation, real-time location tracking, and user-friendly ride management.  
-
 ---  
-
-## Test Results  
-
 ### 1. User Registration  
 #### Description: A user registers for the app by providing valid details.  
 
