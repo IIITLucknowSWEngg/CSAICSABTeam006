@@ -159,3 +159,56 @@
    - Unit Tests: Jest (Frontend), PyTest/JUnit (Backend).
    - Integration Tests: Postman/Newman or Cypress.
 4. **Version Control**: Use Git with branching strategies like GitFlow.
+
+
+
+| **Section**                  | **Details**                                                                                 |
+|------------------------------|---------------------------------------------------------------------------------------------|
+| **1. High-Level Architecture** |                                                                                             |
+| **A. Architecture Type**      | Client-Server, Microservices, Cloud-Native                                                |
+| **B. Key Components**         |                                                                                             |
+| Frontend                     | Web and mobile UI, interacts via APIs                                                     |
+| Backend                      | API Gateway, microservices for various functionalities                                     |
+| Database                     | Relational (e.g., PostgreSQL), NoSQL (e.g., MongoDB), Object Storage (e.g., AWS S3)        |
+| Security                     | OAuth2/JWT, file encryption                                                                |
+| Monitoring and Analytics     | System logs, usage insights                                                                |
+| **2. Logical Design**          |                                                                                             |
+| **A. Modules**                |                                                                                             |
+| Authentication               | Login, registration, password management, OAuth2, MFA                                      |
+| File Management              | File CRUD, versioning, upload/download                                                     |
+| Sharing and Collaboration    | Link sharing, real-time collaboration                                                      |
+| Search                       | Full-text search, metadata filtering                                                       |
+| Notifications                | Email, push notifications                                                                  |
+| Analytics                    | Storage usage and activity dashboards                                                      |
+| **B. Data Flow**              |                                                                                             |
+| File Upload                  | Frontend → API Gateway → Storage → Metadata in database                                    |
+| File Sharing                 | Generate sharing link → Token saved in database                                            |
+| Search                       | Query to Search Service → Database results                                                |
+| **3. Database Design**         |                                                                                             |
+| Relational Schema            | Users, Files, Folders, Sharing tables                                                     |
+| NoSQL Schema                 | Activity logs                                                                              |
+| **4. Component Design**        |                                                                                             |
+| **A. Frontend**               |                                                                                             |
+| Framework                    | React.js (Web), React Native/Flutter (Mobile)                                              |
+| State Management             | Redux or Context API                                                                       |
+| UI Features                  | File Explorer, Drag-and-Drop, Collaboration Workspace                                      |
+| API Communication            | Axios or Fetch API                                                                         |
+| **B. Backend**                |                                                                                             |
+| API Gateway                  | Routes requests, handles rate limiting and load balancing                                  |
+| Microservices                | User, Storage, Search, Notifications                                                      |
+| Communication                | REST APIs for client-server, Message Queues (RabbitMQ, Kafka) for inter-service            |
+| **5. Security Design**         |                                                                                             |
+| Authentication               | OAuth2, JWT                                                                                |
+| Access Control               | RBAC, ABAC                                                                                 |
+| Data Protection              | AES-256 encryption for files, TLS for transit                                              |
+| Audit Logs                   | User actions for compliance                                                                |
+| **6. Deployment Design**       |                                                                                             |
+| Cloud Provider               | AWS, Google Cloud, Azure                                                                   |
+| CI/CD                        | Jenkins, GitHub Actions, GitLab CI/CD                                                     |
+| Load Balancing               | AWS ELB, NGINX                                                                             |
+| Containerization             | Docker, Kubernetes                                                                         |
+| **7. Development Workflow**    |                                                                                             |
+| Requirements Gathering       | Collaborate with stakeholders                                                             |
+| Agile Development            | Scrum or Kanban                                                                           |
+| Testing                      | Unit (Jest, PyTest/JUnit), Integration (Postman, Cypress)                                  |
+| Version Control              | Git with GitFlow branching                                                                 |
