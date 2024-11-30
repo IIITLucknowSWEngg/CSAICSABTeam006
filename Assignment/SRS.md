@@ -100,6 +100,60 @@ Admins will manage the system, verify drivers, resolve disputes, and oversee ove
 - Potential for expanding services to include food delivery or parcel transport.
 - AI integration for fare prediction and demand forecasting.
 
+
+### **Abuse Cases for InDrive Clone 🚨**
+
+1. **Fake Accounts**  
+   Fraudulent accounts harm trust and enable scams.  
+   **Solution:** Strict ID verification and anomaly detection.  
+
+2. **Ride Cancellations**  
+   Users cancel rides repeatedly, wasting drivers’ time.  
+   **Solution:** Penalties for frequent cancellations.  
+
+3. **Unfair Fare Haggling**  
+   Users lowball, or drivers inflate prices.  
+   **Solution:** Set fair minimum and maximum limits.  
+
+4. **Harassment or Abuse**  
+   Misbehavior during rides or chats.  
+   **Solution:** SOS buttons, incident reporting, and swift action.  
+
+5. **Payment Fraud**  
+   Stolen cards or disputes on valid payments.  
+   **Solution:** Secure gateways and fraud monitoring.  
+
+6. **Driver Misconduct**  
+   Drivers refusing rides or unsafe driving.  
+   **Solution:** Ratings-based monitoring and mandatory training.  
+
+7. **Data Breaches**  
+   Hackers or misuse of private data.  
+   **Solution:** Encryption and compliance with data laws.  
+
+8. **Impersonation Scams**  
+   Fake drivers or platform reps scamming users.  
+   **Solution:** Verified profiles and in-app communication.  
+
+9. **Unauthorized Riders**  
+   Drivers allowing extra passengers.  
+   **Solution:** Trip verification via OTP.  
+
+10. **System Exploits**  
+   Hackers disrupting operations.  
+   **Solution:** Regular security updates and monitoring.  
+
+11. **Fake Reviews**  
+   Manipulated ratings mislead users.  
+   **Solution:** Verified ride-based reviews only.  
+
+12. **Driver Gaming the System**  
+   Selectively working during high-demand hours.  
+   **Solution:** Incentives for consistent availability.  
+
+13. **Promo Abuse**  
+   Multiple accounts to exploit discounts.  
+   **Solution:** One-account-per-user rules.  
+
 ---
 
-This SRS provides a clear, concise framework for developing a feature-rich ride-hailing platform, ensuring high performance, scalability, and security.
