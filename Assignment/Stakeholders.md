@@ -364,4 +364,3 @@ Category: External
 </table>
 <hr></hr>
 <h2>Conclusion</h2>
-This document outlines key roles and responsibilities, ensuring alignment and collaboration for the successful development and operation of the InDrive clone, meeting both user and business objectives.
