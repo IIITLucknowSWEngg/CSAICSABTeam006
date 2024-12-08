@@ -129,11 +129,8 @@ A use case diagram visually represents the interactions between actors and the s
 ### 5.2 Security Requirements  
 - Data encryption at rest and in transit.  
 - OTP for ride confirmation and account verification.  
-- Regular audits for system vulnerabilities.  
-
-### 5.3 Scalability  
-- The system shall handle up to 100,000 concurrent users.  
-
+- Regular audits for system vulnerabilities.
+  
 ---
 
 ## 6. Other Requirements  
