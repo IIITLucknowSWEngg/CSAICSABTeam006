@@ -63,64 +63,314 @@ Support --> CustomerSupport : Handle User Issues
 ```
 
 # Container Diagram
-## Driver
-## Rider
-![comtainet Diagram](https://github.com/user-attachments/assets/ea20c4a7-aa56-469c-98b6-50573e66390b)
 
+![image](https://github.com/user-attachments/assets/afc0a960-1dd0-47db-8530-f12d08b7ada4)
+
+Here’s the **PlantUML code** for a container diagram considering **Admin**, **Driver**, and **Rider** roles, emphasizing their interactions with the system.  
 
 ```plantuml
 @startuml
 !define RECTANGLE rectangle
 !define BOLD **<color:Black>**
 
-title Container Diagram - InDrive Clone
+title Container Diagram - InDrive Clone (Admin, Driver, Rider)
 
-' Add primary containers
-' User section
-RECTANGLE "Mobile App" as mobileApp <<Mobile Application>> #lightblue
-RECTANGLE "Web App" as webApp <<Web Application>> #lightblue
-RECTANGLE "User API Gateway" as userGateway <<API Gateway>> #lightblue
+skinparam backgroundColor #FFFFFF
 
-' Backend services
+' User-facing applications
+RECTANGLE "Admin Web Panel" as adminPanel <<Web Application>> #lightblue
+RECTANGLE "Driver Mobile App" as driverApp <<Mobile Application>> #lightblue
+RECTANGLE "Rider Mobile App" as riderApp <<Mobile Application>> #lightblue
+
+' API Gateway
+RECTANGLE "API Gateway" as apiGateway <<API Gateway>> #lightblue
+
+' Backend microservices
+RECTANGLE "Ride Service" as rideService <<Microservice>> #lightgreen
+RECTANGLE "User Service" as userService <<Microservice>> #lightgreen
+RECTANGLE "Payment Service" as paymentService <<Microservice>> #lightgreen
+RECTANGLE "Notification Service" as notificationService <<Microservice>> #lightgreen
+RECTANGLE "Admin Management Service" as adminService <<Microservice>> #lightgreen
+
+' Databases
+RECTANGLE "Ride Database" as rideDB <<Database>> #lightyellow
+RECTANGLE "User Database" as userDB <<Database>> #lightyellow
+RECTANGLE "Payment Database" as paymentDB <<Database>> #lightyellow
+
+' External Systems
+RECTANGLE "Payment Gateway" as paymentGateway <<External System>> #orange
+RECTANGLE "SMS Provider" as smsProvider <<External System>> #orange
+RECTANGLE "Email Provider" as emailProvider <<External System>> #orange
+RECTANGLE "Maps Service" as mapsService <<External System>> #orange
+
+' Relationships for Admin
+adminPanel --> apiGateway : Admin Actions
+apiGateway --> adminService : Manage Data/Reports
+adminService --> rideDB : View/Edit Ride Records
+adminService --> userDB : Manage Users
+
+' Relationships for Rider
+riderApp --> apiGateway : REST API Calls
+apiGateway --> userService : Manage Rider Profile
+apiGateway --> rideService : Request Ride
+rideService --> rideDB : Ride Records
+rideService --> mapsService : Fetch Routes
+apiGateway --> paymentService : Handle Rider Payments
+paymentService --> paymentDB : Read/Write
+paymentService --> paymentGateway : Process Payments
+
+' Relationships for Driver
+driverApp --> apiGateway : REST API Calls
+apiGateway --> userService : Manage Driver Profile
+apiGateway --> rideService : Driver Matches/Updates
+rideService --> rideDB : Ride Records
+rideService --> mapsService : Fetch Routes
+
+' Notifications
+notificationService --> smsProvider : Send SMS
+notificationService --> emailProvider : Send Emails
+notificationService --> riderApp : Push Notifications
+notificationService --> driverApp : Push Notifications
+
+@enduml
+```
+Here are separate **PlantUML container diagrams** for **Driver**, **Rider**, and **Admin** workflows. Each role has its dedicated architecture, focusing on their specific interactions.  
+
+---
+
+### **Driver Workflow Diagram**
+![image](https://github.com/user-attachments/assets/cf4b8bf9-9183-475a-a4fd-f38920db44ef)
+
+```plantuml
+@startuml
+!define RECTANGLE rectangle
+!define BOLD **<color:Black>**
+
+title Container Diagram - Driver Workflow
+
+skinparam backgroundColor #FFFFFF
+
+' Applications
+RECTANGLE "Driver Mobile App" as driverApp <<Mobile Application>> #lightblue
+
+' API Gateway
+RECTANGLE "API Gateway" as apiGateway <<API Gateway>> #lightblue
+
+' Backend microservices
+RECTANGLE "Ride Service" as rideService <<Microservice>> #lightgreen
+RECTANGLE "User Service" as userService <<Microservice>> #lightgreen
+RECTANGLE "Notification Service" as notificationService <<Microservice>> #lightgreen
+
+' Databases
+RECTANGLE "Ride Database" as rideDB <<Database>> #lightyellow
+RECTANGLE "User Database" as userDB <<Database>> #lightyellow
+
+' External Systems
+RECTANGLE "Maps Service" as mapsService <<External System>> #orange
+RECTANGLE "SMS Provider" as smsProvider <<External System>> #orange
+
+' Relationships
+driverApp --> apiGateway : REST API Calls
+apiGateway --> userService : Manage Driver Profile
+apiGateway --> rideService : Update Ride Status/Accept Rides
+rideService --> rideDB : Ride Records
+rideService --> mapsService : Fetch Routes
+notificationService --> smsProvider : Send Notifications
+notificationService --> driverApp : Push Notifications
+
+@enduml
+```
+
+---
+
+### **Rider Workflow Diagram**
+![image](https://github.com/user-attachments/assets/2b67c735-a779-451b-8536-cfcb97228879)
+
+```plantuml
+@startuml
+!define RECTANGLE rectangle
+!define BOLD **<color:Black>**
+
+title Container Diagram - Rider Workflow
+
+skinparam backgroundColor #FFFFFF
+
+' Applications
+RECTANGLE "Rider Mobile App" as riderApp <<Mobile Application>> #lightblue
+
+' API Gateway
+RECTANGLE "API Gateway" as apiGateway <<API Gateway>> #lightblue
+
+' Backend microservices
 RECTANGLE "Ride Service" as rideService <<Microservice>> #lightgreen
 RECTANGLE "User Service" as userService <<Microservice>> #lightgreen
 RECTANGLE "Payment Service" as paymentService <<Microservice>> #lightgreen
 RECTANGLE "Notification Service" as notificationService <<Microservice>> #lightgreen
 
-' Database containers
+' Databases
 RECTANGLE "Ride Database" as rideDB <<Database>> #lightyellow
 RECTANGLE "User Database" as userDB <<Database>> #lightyellow
 RECTANGLE "Payment Database" as paymentDB <<Database>> #lightyellow
 
-' External systems
-RECTANGLE "External Payment System" as paymentSystem <<External System>> #pink
-RECTANGLE "Third-Party Map API" as mapAPI <<External System>> #pink
-RECTANGLE "Push Notification Service" as pushNotification <<External System>> #pink
+' External Systems
+RECTANGLE "Maps Service" as mapsService <<External System>> #orange
+RECTANGLE "Payment Gateway" as paymentGateway <<External System>> #orange
+RECTANGLE "SMS Provider" as smsProvider <<External System>> #orange
 
-' Relationships between containers
-mobileApp --> userGateway : "API Calls"
-webApp --> userGateway : "API Calls"
-userGateway --> rideService : "Manage Rides"
-userGateway --> userService : "Manage User Data"
-userGateway --> paymentService : "Process Payments"
-userGateway --> notificationService : "Send Notifications"
-
-rideService --> rideDB : "Read/Write Data"
-userService --> userDB : "Read/Write Data"
-paymentService --> paymentDB : "Read/Write Data"
-
-paymentService --> paymentSystem : "Process Payments"
-rideService --> mapAPI : "Fetch Routes"
-notificationService --> pushNotification : "Send Push Notifications"
+' Relationships
+riderApp --> apiGateway : REST API Calls
+apiGateway --> userService : Manage Rider Profile
+apiGateway --> rideService : Request Rides
+rideService --> rideDB : Ride Records
+rideService --> mapsService : Fetch Routes
+apiGateway --> paymentService : Handle Rider Payments
+paymentService --> paymentDB : Payment Records
+paymentService --> paymentGateway : Process Transactions
+notificationService --> smsProvider : Send Notifications
+notificationService --> riderApp : Push Notifications
 
 @enduml
 ```
 
-## Admin
+---
 
+### **Admin Workflow Diagram**
+![image](https://github.com/user-attachments/assets/32dc05d9-2997-4db6-ba7e-1dae1aeeb876)
+
+```plantuml
+@startuml
+!define RECTANGLE rectangle
+!define BOLD **<color:Black>**
+
+title Container Diagram - Admin Workflow
+
+skinparam backgroundColor #FFFFFF
+
+' Applications
+RECTANGLE "Admin Web Panel" as adminPanel <<Web Application>> #lightblue
+
+' API Gateway
+RECTANGLE "API Gateway" as apiGateway <<API Gateway>> #lightblue
+
+' Backend microservices
+RECTANGLE "Admin Management Service" as adminService <<Microservice>> #lightgreen
+RECTANGLE "Ride Service" as rideService <<Microservice>> #lightgreen
+RECTANGLE "User Service" as userService <<Microservice>> #lightgreen
+
+' Databases
+RECTANGLE "Ride Database" as rideDB <<Database>> #lightyellow
+RECTANGLE "User Database" as userDB <<Database>> #lightyellow
+
+' Relationships
+adminPanel --> apiGateway : Manage Data/Reports
+apiGateway --> adminService : Admin Operations
+adminService --> rideService : Fetch/Edit Ride Records
+adminService --> rideDB : Direct Ride Data Queries
+adminService --> userService : Manage User Profiles
+adminService --> userDB : Direct User Data Queries
+
+@enduml
+```
+---
 # Component Diagram
-## Driver
-![Component Driver Diagram](https://github.com/user-attachments/assets/86f479eb-194e-45d3-8e5b-4459e0c95da4)
+![image](https://github.com/user-attachments/assets/cb28493e-36ba-44c7-847e-389394a85585)
+
+Here is the **PlantUML code** for a **combined component diagram** that includes **Admin**, **Rider**, and **Driver** components.
+
+```plantuml
+@startuml
+title Combined Component Diagram - Admin, Rider, Driver
+
+' External Actors
+actor "Rider (User)" as Rider
+actor "Driver (User)" as Driver
+actor "Admin" as Admin
+actor "Payment Gateway" as PaymentGateway
+actor "Map Service" as MapService
+actor "Notification Service" as NotificationService
+actor "Customer Support" as CustomerSupport
+
+' System Boundary: InDrive Clone App
+package "InDrive Clone App" {
+
+    ' Rider Components
+    component "User Registration \nand Authentication" as Registration
+    component "Ride Booking \nand Management" as RideBooking
+    component "Payment Processing" as RiderPayment
+    component "Driver Rating \nand Review" as RiderRatings
+    component "Push Notifications" as RiderNotifications
+    component "In-App Chat \nand Support" as RiderChatSupport
+    component "Real-Time Location Tracking" as RiderTracking
+
+    ' Driver Components
+    component "Driver Registration \nand Authentication" as DriverRegistration
+    component "Driver Profile Management" as DriverProfile
+    component "Ride Acceptance \nand Management" as RideManagement
+    component "Driver Payment Processing" as DriverPayment
+    component "Driver Ratings \nand Feedback" as DriverRatings
+    component "Driver Notifications" as DriverNotifications
+    component "Driver Real-Time \nLocation Tracking" as DriverTracking
+    component "Driver In-App Chat \nand Support" as DriverChatSupport
+
+    ' Admin Components
+    component "Admin Dashboard" as AdminDashboard
+    component "User Management" as UserManagement
+    component "Driver Management" as DriverManagement
+    component "Ride Monitoring" as RideMonitoring
+    component "Payment Management" as PaymentManagement
+    component "Reports and Analytics" as ReportsAnalytics
+    component "Notification Management" as NotificationManagement
+}
+
+' Relationships for Rider
+Rider --> Registration : Sign Up/Login
+Rider --> RideBooking : Request Ride
+Rider --> RiderPayment : Process Payment
+Rider --> RiderRatings : Rate Driver
+Rider --> RiderNotifications : Receive Notifications
+Rider --> RiderChatSupport : Chat with Driver
+Rider --> RiderTracking : Track Driver Location
+
+' Relationships for Driver
+Driver --> DriverRegistration : Sign Up/Login
+Driver --> DriverProfile : Manage Profile
+Driver --> RideManagement : Accept/Decline Rides
+Driver --> DriverPayment : Track Earnings/Receive Payment
+Driver --> DriverRatings : Rate Rider
+Driver --> DriverNotifications : Receive Notifications
+Driver --> DriverTracking : Share Location
+Driver --> DriverChatSupport : Chat with Rider
+
+' Relationships for Admin
+Admin --> AdminDashboard : Access Dashboard
+Admin --> UserManagement : Manage Users
+Admin --> DriverManagement : Manage Drivers
+Admin --> RideMonitoring : Monitor Rides
+Admin --> PaymentManagement : Monitor Payments
+Admin --> ReportsAnalytics : Generate Reports
+Admin --> NotificationManagement : Manage Notifications
+
+' External Interactions
+RiderTracking --> MapService : Access Maps for Navigation
+DriverTracking --> MapService : Access Maps for Navigation
+RiderPayment --> PaymentGateway : Process Rider Payments
+DriverPayment --> PaymentGateway : Process Driver Payments
+RiderNotifications --> NotificationService : Push Notifications
+DriverNotifications --> NotificationService : Push Notifications
+RiderChatSupport --> CustomerSupport : Escalate Issues
+DriverChatSupport --> CustomerSupport : Escalate Issues
+
+@enduml
+```
+
+
+---
+Below are the **PlantUML** codes for the diagrams related to the **InDrive Clone System**, focusing on the **Driver**, **Rider**, and **Admin**.
+
+---
+
+### **1. Driver Component Diagram**
+![image](https://github.com/user-attachments/assets/d678da3c-69de-497c-aa9d-602aa459dbde)
 
 ```plantuml
 @startuml
@@ -164,10 +414,10 @@ DriverChatSupport --> CustomerSupport : Escalate Issues with Support
 @enduml
 ```
 
-## Rider
-![Component  Rider Diagram]![Screenshot 2024-12-01 001704 1](https://github.com/user-attachments/assets/a66de12a-40f1-4510-8316-2c110947e90c)
+---
 
-
+### **2. Rider Component Diagram**
+![image](https://github.com/user-attachments/assets/98b627f0-5a6f-4c8e-b597-2c80bab41f3f)
 
 ```plantuml
 @startuml
@@ -223,11 +473,10 @@ Support --> CustomerSupport : Handle User Issues
 @enduml
 ```
 
+---
 
-## Admin
-
-![Admin](https://github.com/user-attachments/assets/d77cee63-02b5-4840-b837-d8c5035c85f3)
-
+### **3. Admin Component Diagram**
+![image](https://github.com/user-attachments/assets/3529e829-5c4a-45d9-987b-e9284a3edcab)
 
 ```plantuml
 @startuml
@@ -274,12 +523,12 @@ PaymentManagement --> PaymentGateway : Process Payment Refunds
 NotificationManagement --> NotificationService : Send Notifications to Users
 
 @enduml
-
 ```
 
-# Deployment Diagram Code
+---
 
-![Deployment Diagram](https://github.com/user-attachments/assets/88d20dd1-52e8-4425-912f-a0f0c984c436)
+# Deployment Diagram
+![image](https://github.com/user-attachments/assets/8301b46d-7f67-4292-a9af-1e7b943fd704)
 
 
 ```plantuml
@@ -341,3 +590,9 @@ cloud "Third-Party Services" {
 
 @enduml
 ```
+
+
+
+
+
+
