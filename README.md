@@ -3,7 +3,7 @@
 ## <b>TEAM NAME:</b> BYTE BRIGADE 
 
 
-## <b>TEAM IDEA:</b> IN-DRIVE Clone
+## <b>TEAM IDEA:</b> IN-DRIVE Competitor
 
 ### TEAM MEMBERS: 
 
